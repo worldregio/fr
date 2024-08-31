@@ -10,7 +10,13 @@ website:
         text: "Claude Grasland"
       - about.qmd
       - links.qmd
-
+    right: 
+      - icon: github # add icons as navbar buttons
+        href: https://github.com/worldregio
+        target: _blank
+  page-footer:
+    background: dark
+    left: Copyright 2024, Claude Grasland
 format:
   html:
     theme: 
