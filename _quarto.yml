@@ -3,16 +3,19 @@ project:
   output-dir: docs
 
 website:
-  title: "bidon"
+  title: "WorldRegio"
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: "Claude Grasland"
       - about.qmd
+      - links.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      dark: solar
+      light: minty
     css: styles.css
     toc: true
 

@@ -1,11 +1,31 @@
 ---
-title: "bidon"
+title: "Claude Grasland"
+image: media/photoclaude.jpg
+toc: false
+about: 
+  template: trestles
+  image-shape: round
+  image-width: 17em
+  links:
+    - text: GitHub
+      href: https://github.com/worldregio
 ---
 
-This is a Quarto website.
+:::{#hero-heading}
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Claude Grasland is professor of geography at University Paris Cité and member of research team Géographie-cités. 
 
-```{r}
-1 + 1
-```
+## Teaching courses
+- Geography of the world
+- Survey analysis
+- Statistics with R
+- Demography
+- Data mining
+
+## Research area
+- World regionalisation
+- Mental maps
+- Spatial interaction models
+
+:::
+
