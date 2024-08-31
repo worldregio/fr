@@ -1,0 +1,27 @@
+---
+title: "WorldRegio"
+description: "Summary of a project submitted to ERC Adavanced Grant 2024"
+author:
+  - name: Claude Grasland
+    url: https://worldregio.github.io/
+    orcid: 0000-0003-1504-4965
+    affiliation: Professor of Geography at Université Paris Cité & Member of UMR 8504 Géographie-cités
+    affiliation-url: https://geographie-cites.cnrs.fr/
+date: 08-31-2024
+categories: [WorldRegio, Research] # self-defined categories
+citation: 
+  url: https://worldregio.github.io/posts/2024-08-31-worldregio/ 
+image: worldregio.jpg
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+
+![Where is Europe?](worldregio.jpg)
+
+WorldRegio project aims to revisit, from a theoretical and empirical point of view, one of the most fundamental and oldest problems in geography: regionalization. We would like to develop a general theory of the regionalization of a world (abstractly) and then apply it to the trajectories of regionalization of the World (concretely) through time and space. Although rooted in geography, economy, and regional science, this project calls for a dialogue with many other disciplines.
+
+In common usage, the term region refers to a portion of space on an intermediate scale between the local and national levels. A regionalization is a division corresponding to the first level of social, spatial, and political organization used below the state. But what about regionalizations of the World, which correspond to a division on an intermediate scale below the global level but above the national level? Faced with a plurality of powers and languages, they are often the source of conflicts of representation or even world wars.
+
+The theoretical part of the project aims to understand the difficulties of regionalization of abstract worlds. Different geometries lead to different delimitations of the boundaries of regions, while different languages lead to different semantic qualifications of the content of these regions. Representation conflicts are inevitable if methods are not used to align geometric and semantic concepts.
+
+Applied to the dynamics of the contemporary world over 20 to 50 years, the empirical part of the project aims to explore the trajectories of regionalization that are transforming the material and imaginary organization of the World. The project proposes to analyze the transformations that are affecting the functional regionalization of the world (trade flows), the imaginaries produced by the media (news flow), and the cognitive representation that actors use according to their social and spatial position (mental maps).

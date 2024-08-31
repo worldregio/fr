@@ -1,10 +1,24 @@
 [
   {
-    "objectID": "links.html",
-    "href": "links.html",
-    "title": "links",
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog",
     "section": "",
-    "text": "My favorite links …"
+    "text": "WorldRegio\n\n\n\n\n\n\n\nWorldRegio\n\n\nResearch\n\n\n\n\nSummary of a project submitted to ERC Adavanced Grant 2024\n\n\n\n\n\n\nAug 31, 2024\n\n\nClaude Grasland\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/2024-08-31-worldregio/index.html",
+    "href": "posts/2024-08-31-worldregio/index.html",
+    "title": "WorldRegio",
+    "section": "",
+    "text": "Where is Europe?\n\n\nWorldRegio project aims to revisit, from a theoretical and empirical point of view, one of the most fundamental and oldest problems in geography: regionalization. We would like to develop a general theory of the regionalization of a world (abstractly) and then apply it to the trajectories of regionalization of the World (concretely) through time and space. Although rooted in geography, economy, and regional science, this project calls for a dialogue with many other disciplines.\nIn common usage, the term region refers to a portion of space on an intermediate scale between the local and national levels. A regionalization is a division corresponding to the first level of social, spatial, and political organization used below the state. But what about regionalizations of the World, which correspond to a division on an intermediate scale below the global level but above the national level? Faced with a plurality of powers and languages, they are often the source of conflicts of representation or even world wars.\nThe theoretical part of the project aims to understand the difficulties of regionalization of abstract worlds. Different geometries lead to different delimitations of the boundaries of regions, while different languages lead to different semantic qualifications of the content of these regions. Representation conflicts are inevitable if methods are not used to align geometric and semantic concepts.\nApplied to the dynamics of the contemporary world over 20 to 50 years, the empirical part of the project aims to explore the trajectories of regionalization that are transforming the material and imaginary organization of the World. The project proposes to analyze the transformations that are affecting the functional regionalization of the world (trade flows), the imaginaries produced by the media (news flow), and the cognitive representation that actors use according to their social and spatial position (mental maps).\n\n\n\nCitationBibTeX citation:@online{grasland2024,\n  author = {Grasland, Claude},\n  title = {WorldRegio},\n  date = {2024-08-31},\n  url = {https://worldregio.github.io/posts/2024-08-31-worldregio/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nGrasland, Claude. 2024. “WorldRegio.” August 31, 2024. https://worldregio.github.io/posts/2024-08-31-worldregio/."
   },
   {
     "objectID": "index.html",
@@ -28,10 +42,10 @@
     "text": "World regionalisation\nMental maps\nSpatial interaction models"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "links.html",
+    "href": "links.html",
+    "title": "links",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "My favorite links …"
   }
 ]

@@ -10,6 +10,7 @@ website:
         text: "Claude Grasland"
       - about.qmd
       - links.qmd
+      - posts.qmd
     right: 
       - icon: github # add icons as navbar buttons
         href: https://github.com/worldregio
