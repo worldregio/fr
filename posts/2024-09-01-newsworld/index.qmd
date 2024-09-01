@@ -1,0 +1,21 @@
+---
+title: "Should Africa be renamed?"
+description: "Dissemination of a recent research paper by *The Conversation*"
+author:
+  - name: Claude Grasland
+    url: https://worldregio.github.io/
+    orcid: 0000-0003-1504-4965
+    affiliation: Professor of Geography at Université Paris Cité & Member of UMR 8504 Géographie-cités
+    affiliation-url: https://geographie-cites.cnrs.fr/
+date: 09-01-2024
+categories: [World News, Africa] # self-defined categories
+citation: 
+  url: https://worldregio.github.io/posts/2024-09-01-newsworld/ 
+image: news.jpg
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+bibliography: references.bib
+---
+
+In a recent publication by [The Conversation, 29/08/2024](https://theconversation.com/is-africa-a-racial-slur-and-should-the-continent-be-renamed-234740) it is proposed to rename Africa.
+
+> "Should African people be called black -- or is the categorising of people by skin colour a racist practice? How about Africa? Is the name of the continent a racial slur because it was chosen by European exploiters and based on the weather rather than the people -- and should it be renamed? These are questions that African philosophy scholar Jonathan Okeke Chimakonam considers in a research paper @chimakonam2021"
