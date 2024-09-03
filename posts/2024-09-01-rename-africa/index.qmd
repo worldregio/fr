@@ -1,16 +1,16 @@
 ---
 title: "Faut-il renommer l'Afrique?"
-description: "Résumé d'un article "
-#author:
-#  - name: Claude Grasland
-#    url: https://worldregio.github.io/
-#    orcid: 0000-0003-1504-4965
-#    affiliation: Professor of Geography at Université Paris Cité & Member of UMR 8504 Géographie-cités
-#    affiliation-url: https://geographie-cites.cnrs.fr/
+description: "Deux philosophes africains proposent de remplacer Afrique par Anaesia"
+author:
+  - name: Claude Grasland
+    url: https://worldregio.github.io/
+    orcid: 0000-0003-1504-4965
+    affiliation: Professeur de géographie, Université Paris Cité, UMR Géographie-cités
+    affiliation-url: https://geographie-cites.cnrs.fr/
 date: 09-01-2024
 categories: [Africa, Language, Continent] # self-defined categories
-#citation: 
-#  url: https://worldregio.github.io/posts/2024-09-01-rename-africa/ 
+citation: 
+  url: https://worldregio.github.io/fr/posts/2024-09-01-rename-africa/ 
 image: Anaesia.jpg
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 bibliography: references.bib
