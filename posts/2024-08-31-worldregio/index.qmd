@@ -1,27 +1,29 @@
 ---
-title: "WorldRegio"
-description: "Summary of a project submitted to ERC Adavanced Grant 2024"
+title: "Résumé du projet WorldRegio"
+description: "Résumé du projet ERC Adavanced Grant soumis en 2024"
 author:
   - name: Claude Grasland
     url: https://worldregio.github.io/
     orcid: 0000-0003-1504-4965
-    affiliation: Professor of Geography at Université Paris Cité & Member of UMR 8504 Géographie-cités
+    affiliation: Professeur de géographie, Université Paris Cité, UMR Géographie-cités
     affiliation-url: https://geographie-cites.cnrs.fr/
 date: 08-31-2024
 categories: [WorldRegio, Research] # self-defined categories
 citation: 
-  url: https://worldregio.github.io/posts/2024-08-31-worldregio/ 
+  url: https://worldregio.github.io/fr/posts/2024-08-31-worldregio/ 
 image: worldregio.jpg
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 ---
 
 
-![Where is Europe?](worldregio.jpg)
+![Où est l'Europe?](worldregio.jpg)
 
-WorldRegio project aims to revisit, from a theoretical and empirical point of view, one of the most fundamental and oldest problems in geography: regionalization. We would like to develop a general theory of the regionalization of a world (abstractly) and then apply it to the trajectories of regionalization of the World (concretely) through time and space. Although rooted in geography, economy, and regional science, this project calls for a dialogue with many other disciplines.
+Le projet WorldRegio vise à revisiter, d'un point de vue théorique et empirique, l'un des problèmes les plus fondamentaux et les plus anciens de la géographie : la régionalisation. Nous souhaitons développer une théorie générale de la régionalisation d'un monde (de manière abstraite) et l'appliquer aux trajectoires de régionalisation du monde (de manière concrète) à travers le temps et l'espace. Bien qu'ancré dans la géographie, l'économie et la science régionale, ce projet appelle un dialogue avec de nombreuses autres disciplines.
 
-In common usage, the term region refers to a portion of space on an intermediate scale between the local and national levels. A regionalization is a division corresponding to the first level of social, spatial, and political organization used below the state. But what about regionalizations of the World, which correspond to a division on an intermediate scale below the global level but above the national level? Faced with a plurality of powers and languages, they are often the source of conflicts of representation or even world wars.
+Dans l'usage courant, le terme région désigne une portion d'espace à une échelle intermédiaire entre le niveau local et le niveau national. Une régionalisation est un découpage correspondant au premier niveau d'organisation sociale, spatiale et politique utilisé en dessous de l'État. Mais qu'en est-il des régionalisations du Monde, qui correspondent à un découpage à une échelle intermédiaire inférieure au niveau mondial mais supérieure au niveau national ? Confrontées à une pluralité de pouvoirs et de langues, elles sont souvent à l'origine de conflits de représentation, voire de guerres mondiales.
 
-The theoretical part of the project aims to understand the difficulties of regionalization of abstract worlds. Different geometries lead to different delimitations of the boundaries of regions, while different languages lead to different semantic qualifications of the content of these regions. Representation conflicts are inevitable if methods are not used to align geometric and semantic concepts.
+La partie théorique du projet vise à comprendre les difficultés de la régionalisation des mondes abstraits. Des géométries différentes conduisent à des délimitations différentes des frontières des régions, tandis que des langues différentes conduisent à des qualifications sémantiques différentes du contenu de ces régions. Les conflits de représentation sont inévitables si des méthodes ne sont pas utilisées pour aligner les concepts géométriques et sémantiques.
 
-Applied to the dynamics of the contemporary world over 20 to 50 years, the empirical part of the project aims to explore the trajectories of regionalization that are transforming the material and imaginary organization of the World. The project proposes to analyze the transformations that are affecting the functional regionalization of the world (trade flows), the imaginaries produced by the media (news flow), and the cognitive representation that actors use according to their social and spatial position (mental maps).
+Appliquée aux dynamiques du monde contemporain sur 20 à 50 ans, la partie empirique du projet vise à explorer les trajectoires de régionalisation qui transforment l'organisation matérielle et imaginaire du monde. Le projet propose d'analyser les transformations qui affectent la régionalisation fonctionnelle du monde (flux commerciaux), les imaginaires produits par les médias (flux de nouvelles), et la représentation cognitive que les acteurs utilisent en fonction de leur position sociale et spatiale (cartes mentales).
+
+

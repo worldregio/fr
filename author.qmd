@@ -14,19 +14,18 @@ about:
 
 :::{#hero-heading}
 
-Claude Grasland is professor of geography at University Paris Cité and member of research team Géographie-cités. 
+Claude Grasland est professeur de géographie à l'Université Paris Cité et membre de l'équipe de recherche Géographie-cités. 
 
-## Teaching courses
-- Geography of the world
-- Survey analysis
-- Statistics with R
-- Demography
+## Enseignements
+- Géographie du monde
+- Analyse d'enquêtes
+- Statistiques avec R
+- Démographie
 - Data mining
 
-## Research area
-- World regionalisation
-- Mental maps
-- Spatial interaction models
-
+## Axes de recherche
+- Régionalisation du monde
+- Cartes mentales
+- Modèles d'interaction spatiale
 :::
 

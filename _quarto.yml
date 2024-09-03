@@ -7,10 +7,9 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: "Project"
+        text: "Projet"
       - href: author.qmd
-        text: "Author"
-      - links.qmd
+        text: "Auteur"
       - posts.qmd
     right: 
       - icon: github # add icons as navbar buttons

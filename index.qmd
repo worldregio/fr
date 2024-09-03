@@ -1,5 +1,5 @@
 ---
-title: "Project"
+title: "Projet"
 image: media/network.jpg
 toc: false
 about: 
@@ -14,6 +14,6 @@ about:
 
 :::{#hero-heading}
 
-WorldRegio project aims to revisit, from a theoretical and empirical point of view, one of the most fundamental and oldest problems in geography: regionalization. We would like to develop a general theory of the regionalization of a world (abstractly) and then apply it to the trajectories of regionalization of the World (concretely) through time and space. 
+Le projet WorldRegio vise à revisiter, d'un point de vue théorique et empirique, l'un des problèmes les plus fondamentaux et les plus anciens de la géographie : la régionalisation. Nous aimerions développer une théorie générale de la régionalisation d'un monde (abstraitement) et l'appliquer ensuite aux trajectoires de régionalisation du monde (concrètement) à travers le temps et l'espace. 
 :::
 

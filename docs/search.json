@@ -4,21 +4,21 @@
     "href": "author.html",
     "title": "Claude Grasland",
     "section": "",
-    "text": "Claude Grasland is professor of geography at University Paris Cité and member of research team Géographie-cités.\n\n\n\nGeography of the world\nSurvey analysis\nStatistics with R\nDemography\nData mining\n\n\n\n\n\nWorld regionalisation\nMental maps\nSpatial interaction models"
+    "text": "Claude Grasland est professeur de géographie à l’Université Paris Cité et membre de l’équipe de recherche Géographie-cités.\n\n\n\nGéographie du monde\nAnalyse d’enquêtes\nStatistiques avec R\nDémographie\nData mining\n\n\n\n\n\nRégionalisation du monde\nCartes mentales\nModèles d’interaction spatiale"
   },
   {
-    "objectID": "author.html#teaching-courses",
-    "href": "author.html#teaching-courses",
+    "objectID": "author.html#enseignements",
+    "href": "author.html#enseignements",
     "title": "Claude Grasland",
     "section": "",
-    "text": "Geography of the world\nSurvey analysis\nStatistics with R\nDemography\nData mining"
+    "text": "Géographie du monde\nAnalyse d’enquêtes\nStatistiques avec R\nDémographie\nData mining"
   },
   {
-    "objectID": "author.html#research-area",
-    "href": "author.html#research-area",
+    "objectID": "author.html#axes-de-recherche",
+    "href": "author.html#axes-de-recherche",
     "title": "Claude Grasland",
     "section": "",
-    "text": "World regionalisation\nMental maps\nSpatial interaction models"
+    "text": "Régionalisation du monde\nCartes mentales\nModèles d’interaction spatiale"
   },
   {
     "objectID": "links.html",
@@ -30,23 +30,23 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Project",
+    "title": "Projet",
     "section": "",
-    "text": "WorldRegio project aims to revisit, from a theoretical and empirical point of view, one of the most fundamental and oldest problems in geography: regionalization. We would like to develop a general theory of the regionalization of a world (abstractly) and then apply it to the trajectories of regionalization of the World (concretely) through time and space."
+    "text": "Le projet WorldRegio vise à revisiter, d’un point de vue théorique et empirique, l’un des problèmes les plus fondamentaux et les plus anciens de la géographie : la régionalisation. Nous aimerions développer une théorie générale de la régionalisation d’un monde (abstraitement) et l’appliquer ensuite aux trajectoires de régionalisation du monde (concrètement) à travers le temps et l’espace."
   },
   {
     "objectID": "posts/2024-08-31-worldregio/index.html",
     "href": "posts/2024-08-31-worldregio/index.html",
-    "title": "WorldRegio",
+    "title": "Résumé du projet WorldRegio",
     "section": "",
-    "text": "Where is Europe?\n\n\nWorldRegio project aims to revisit, from a theoretical and empirical point of view, one of the most fundamental and oldest problems in geography: regionalization. We would like to develop a general theory of the regionalization of a world (abstractly) and then apply it to the trajectories of regionalization of the World (concretely) through time and space. Although rooted in geography, economy, and regional science, this project calls for a dialogue with many other disciplines.\nIn common usage, the term region refers to a portion of space on an intermediate scale between the local and national levels. A regionalization is a division corresponding to the first level of social, spatial, and political organization used below the state. But what about regionalizations of the World, which correspond to a division on an intermediate scale below the global level but above the national level? Faced with a plurality of powers and languages, they are often the source of conflicts of representation or even world wars.\nThe theoretical part of the project aims to understand the difficulties of regionalization of abstract worlds. Different geometries lead to different delimitations of the boundaries of regions, while different languages lead to different semantic qualifications of the content of these regions. Representation conflicts are inevitable if methods are not used to align geometric and semantic concepts.\nApplied to the dynamics of the contemporary world over 20 to 50 years, the empirical part of the project aims to explore the trajectories of regionalization that are transforming the material and imaginary organization of the World. The project proposes to analyze the transformations that are affecting the functional regionalization of the world (trade flows), the imaginaries produced by the media (news flow), and the cognitive representation that actors use according to their social and spatial position (mental maps).\n\n\n\nCitationBibTeX citation:@online{grasland2024,\n  author = {Grasland, Claude},\n  title = {WorldRegio},\n  date = {2024-08-31},\n  url = {https://worldregio.github.io/posts/2024-08-31-worldregio/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nGrasland, Claude. 2024. “WorldRegio.” August 31, 2024. https://worldregio.github.io/posts/2024-08-31-worldregio/."
+    "text": "Où est l’Europe?\n\n\nLe projet WorldRegio vise à revisiter, d’un point de vue théorique et empirique, l’un des problèmes les plus fondamentaux et les plus anciens de la géographie : la régionalisation. Nous souhaitons développer une théorie générale de la régionalisation d’un monde (de manière abstraite) et l’appliquer aux trajectoires de régionalisation du monde (de manière concrète) à travers le temps et l’espace. Bien qu’ancré dans la géographie, l’économie et la science régionale, ce projet appelle un dialogue avec de nombreuses autres disciplines.\nDans l’usage courant, le terme région désigne une portion d’espace à une échelle intermédiaire entre le niveau local et le niveau national. Une régionalisation est un découpage correspondant au premier niveau d’organisation sociale, spatiale et politique utilisé en dessous de l’État. Mais qu’en est-il des régionalisations du Monde, qui correspondent à un découpage à une échelle intermédiaire inférieure au niveau mondial mais supérieure au niveau national ? Confrontées à une pluralité de pouvoirs et de langues, elles sont souvent à l’origine de conflits de représentation, voire de guerres mondiales.\nLa partie théorique du projet vise à comprendre les difficultés de la régionalisation des mondes abstraits. Des géométries différentes conduisent à des délimitations différentes des frontières des régions, tandis que des langues différentes conduisent à des qualifications sémantiques différentes du contenu de ces régions. Les conflits de représentation sont inévitables si des méthodes ne sont pas utilisées pour aligner les concepts géométriques et sémantiques.\nAppliquée aux dynamiques du monde contemporain sur 20 à 50 ans, la partie empirique du projet vise à explorer les trajectoires de régionalisation qui transforment l’organisation matérielle et imaginaire du monde. Le projet propose d’analyser les transformations qui affectent la régionalisation fonctionnelle du monde (flux commerciaux), les imaginaires produits par les médias (flux de nouvelles), et la représentation cognitive que les acteurs utilisent en fonction de leur position sociale et spatiale (cartes mentales).\n\n\n\nCitationBibTeX citation:@online{grasland2024,\n  author = {Grasland, Claude},\n  title = {Résumé Du Projet {WorldRegio}},\n  date = {2024-08-31},\n  url = {https://worldregio.github.io/fr/posts/2024-08-31-worldregio/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nGrasland, Claude. 2024. “Résumé Du Projet WorldRegio.”\nAugust 31, 2024. https://worldregio.github.io/fr/posts/2024-08-31-worldregio/."
   },
   {
     "objectID": "posts/2024-09-01-newsworld/index.html",
     "href": "posts/2024-09-01-newsworld/index.html",
-    "title": "Should Africa be renamed?",
+    "title": "Faut-il renommer l’Afrique?",
     "section": "",
-    "text": "In a recent publication by The Conversation, 29/08/2024 it is proposed to rename Africa.\n\n“Should African people be called black – or is the categorising of people by skin colour a racist practice? How about Africa? Is the name of the continent a racial slur because it was chosen by European exploiters and based on the weather rather than the people – and should it be renamed? These are questions that African philosophy scholar Jonathan Okeke Chimakonam considers in a research paper Chimakonam and Egbai (2021)”\n\n\n\n\n\nReferences\n\nChimakonam, Jonathan O., and Uti O. Egbai. 2021. “Is ‘Africa’ a Racial Slur and Should the Continent Be Renamed?” African Identities 22 (2): 293–306. https://doi.org/10.1080/14725843.2021.2017262."
+    "text": "Dans un article de The Conversation, 29/08/2024 l’auteur résume un article où il propose de renommer l’Afrique.\n\n“Les Africains doivent-ils être appelés « Noirs » ou la catégorisation des personnes en fonction de la couleur de leur peau est-elle une pratique raciste ? Qu’en est-il de l’Afrique ? Le nom du continent est-il une insulte raciale parce qu’il a été choisi par les exploiteurs européens et basé sur le climat plutôt que sur la population - et devrait-il être rebaptisé ? Ces questions sont examinées par Jonathan Okeke Chimakonam, spécialiste de la philosophie africaine, dans un document de recherche Chimakonam and Egbai (2021)”\n\n\n\n\n\nReferences\n\nChimakonam, Jonathan O., and Uti O. Egbai. 2021. “Is ‘Africa’ a Racial Slur and Should the Continent Be Renamed?” African Identities 22 (2): 293–306. https://doi.org/10.1080/14725843.2021.2017262."
   },
   {
     "objectID": "about.html",
@@ -60,6 +60,6 @@
     "href": "posts.html",
     "title": "Blog",
     "section": "",
-    "text": "Should Africa be renamed?\n\n\n\n\n\n\n\nWorld News\n\n\nAfrica\n\n\n\n\nDissemination of a recent research paper by The Conversation\n\n\n\n\n\n\nSep 1, 2024\n\n\n\n\n\n\n  \n\n\n\n\nWorldRegio\n\n\n\n\n\n\n\nWorldRegio\n\n\nResearch\n\n\n\n\nSummary of a project submitted to ERC Adavanced Grant 2024\n\n\n\n\n\n\nAug 31, 2024\n\n\nClaude Grasland\n\n\n\n\n\n\nNo matching items"
+    "text": "Faut-il renommer l’Afrique?\n\n\n\n\n\n\n\nWorld News\n\n\nAfrica\n\n\n\n\nRésumé d’un article\n\n\n\n\n\n\nSep 1, 2024\n\n\n\n\n\n\n  \n\n\n\n\nRésumé du projet WorldRegio\n\n\n\n\n\n\n\nWorldRegio\n\n\nResearch\n\n\n\n\nRésumé du projet ERC Adavanced Grant soumis en 2024\n\n\n\n\n\n\nAug 31, 2024\n\n\nClaude Grasland\n\n\n\n\n\n\nNo matching items"
   }
 ]
