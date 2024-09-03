@@ -1,6 +1,6 @@
 ---
-title: "Claude Grasland"
-image: media/photoclaude.jpg
+title: "Project"
+image: media/network.jpg
 toc: false
 about: 
   template: trestles
@@ -14,19 +14,6 @@ about:
 
 :::{#hero-heading}
 
-Claude Grasland is professor of geography at University Paris Cité and member of research team Géographie-cités. 
-
-## Teaching courses
-- Geography of the world
-- Survey analysis
-- Statistics with R
-- Demography
-- Data mining
-
-## Research area
-- World regionalisation
-- Mental maps
-- Spatial interaction models
-
+WorldRegio project aims to revisit, from a theoretical and empirical point of view, one of the most fundamental and oldest problems in geography: regionalization. We would like to develop a general theory of the regionalization of a world (abstractly) and then apply it to the trajectories of regionalization of the World (concretely) through time and space. 
 :::
 

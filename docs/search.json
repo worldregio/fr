@@ -1,49 +1,21 @@
 [
   {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Should Africa be renamed?\n\n\n\n\n\n\n\nWorld News\n\n\nAfrica\n\n\n\n\nDissemination of a recent research paper by The Conversation\n\n\n\n\n\n\nSep 1, 2024\n\n\nClaude Grasland\n\n\n\n\n\n\n  \n\n\n\n\nWorldRegio\n\n\n\n\n\n\n\nWorldRegio\n\n\nResearch\n\n\n\n\nSummary of a project submitted to ERC Adavanced Grant 2024\n\n\n\n\n\n\nAug 31, 2024\n\n\nClaude Grasland\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "posts/2024-09-01-newsworld/index.html",
-    "href": "posts/2024-09-01-newsworld/index.html",
-    "title": "Should Africa be renamed?",
-    "section": "",
-    "text": "In a recent publication by The Conversation, 29/08/2024 it is proposed to rename Africa.\n\n“Should African people be called black – or is the categorising of people by skin colour a racist practice? How about Africa? Is the name of the continent a racial slur because it was chosen by European exploiters and based on the weather rather than the people – and should it be renamed? These are questions that African philosophy scholar Jonathan Okeke Chimakonam considers in a research paper Chimakonam and Egbai (2021)”\n\n\n\n\n\nReferences\n\nChimakonam, Jonathan O., and Uti O. Egbai. 2021. “Is ‘Africa’ a Racial Slur and Should the Continent Be Renamed?” African Identities 22 (2): 293–306. https://doi.org/10.1080/14725843.2021.2017262.\n\nCitationBibTeX citation:@online{grasland2024,\n  author = {Grasland, Claude},\n  title = {Should {Africa} Be Renamed?},\n  date = {2024-09-01},\n  url = {https://worldregio.github.io/posts/2024-09-01-newsworld/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nGrasland, Claude. 2024. “Should Africa Be Renamed?”\nSeptember 1, 2024. https://worldregio.github.io/posts/2024-09-01-newsworld/."
-  },
-  {
-    "objectID": "posts/2024-08-31-worldregio/index.html",
-    "href": "posts/2024-08-31-worldregio/index.html",
-    "title": "WorldRegio",
-    "section": "",
-    "text": "Where is Europe?\n\n\nWorldRegio project aims to revisit, from a theoretical and empirical point of view, one of the most fundamental and oldest problems in geography: regionalization. We would like to develop a general theory of the regionalization of a world (abstractly) and then apply it to the trajectories of regionalization of the World (concretely) through time and space. Although rooted in geography, economy, and regional science, this project calls for a dialogue with many other disciplines.\nIn common usage, the term region refers to a portion of space on an intermediate scale between the local and national levels. A regionalization is a division corresponding to the first level of social, spatial, and political organization used below the state. But what about regionalizations of the World, which correspond to a division on an intermediate scale below the global level but above the national level? Faced with a plurality of powers and languages, they are often the source of conflicts of representation or even world wars.\nThe theoretical part of the project aims to understand the difficulties of regionalization of abstract worlds. Different geometries lead to different delimitations of the boundaries of regions, while different languages lead to different semantic qualifications of the content of these regions. Representation conflicts are inevitable if methods are not used to align geometric and semantic concepts.\nApplied to the dynamics of the contemporary world over 20 to 50 years, the empirical part of the project aims to explore the trajectories of regionalization that are transforming the material and imaginary organization of the World. The project proposes to analyze the transformations that are affecting the functional regionalization of the world (trade flows), the imaginaries produced by the media (news flow), and the cognitive representation that actors use according to their social and spatial position (mental maps).\n\n\n\nCitationBibTeX citation:@online{grasland2024,\n  author = {Grasland, Claude},\n  title = {WorldRegio},\n  date = {2024-08-31},\n  url = {https://worldregio.github.io/posts/2024-08-31-worldregio/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nGrasland, Claude. 2024. “WorldRegio.” August 31, 2024. https://worldregio.github.io/posts/2024-08-31-worldregio/."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "author.html",
+    "href": "author.html",
     "title": "Claude Grasland",
     "section": "",
     "text": "Claude Grasland is professor of geography at University Paris Cité and member of research team Géographie-cités.\n\n\n\nGeography of the world\nSurvey analysis\nStatistics with R\nDemography\nData mining\n\n\n\n\n\nWorld regionalisation\nMental maps\nSpatial interaction models"
   },
   {
-    "objectID": "index.html#teaching-courses",
-    "href": "index.html#teaching-courses",
+    "objectID": "author.html#teaching-courses",
+    "href": "author.html#teaching-courses",
     "title": "Claude Grasland",
     "section": "",
     "text": "Geography of the world\nSurvey analysis\nStatistics with R\nDemography\nData mining"
   },
   {
-    "objectID": "index.html#research-area",
-    "href": "index.html#research-area",
+    "objectID": "author.html#research-area",
+    "href": "author.html#research-area",
     "title": "Claude Grasland",
     "section": "",
     "text": "World regionalisation\nMental maps\nSpatial interaction models"
@@ -54,5 +26,40 @@
     "title": "links",
     "section": "",
     "text": "My favorite links …"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Project",
+    "section": "",
+    "text": "WorldRegio project aims to revisit, from a theoretical and empirical point of view, one of the most fundamental and oldest problems in geography: regionalization. We would like to develop a general theory of the regionalization of a world (abstractly) and then apply it to the trajectories of regionalization of the World (concretely) through time and space."
+  },
+  {
+    "objectID": "posts/2024-08-31-worldregio/index.html",
+    "href": "posts/2024-08-31-worldregio/index.html",
+    "title": "WorldRegio",
+    "section": "",
+    "text": "Where is Europe?\n\n\nWorldRegio project aims to revisit, from a theoretical and empirical point of view, one of the most fundamental and oldest problems in geography: regionalization. We would like to develop a general theory of the regionalization of a world (abstractly) and then apply it to the trajectories of regionalization of the World (concretely) through time and space. Although rooted in geography, economy, and regional science, this project calls for a dialogue with many other disciplines.\nIn common usage, the term region refers to a portion of space on an intermediate scale between the local and national levels. A regionalization is a division corresponding to the first level of social, spatial, and political organization used below the state. But what about regionalizations of the World, which correspond to a division on an intermediate scale below the global level but above the national level? Faced with a plurality of powers and languages, they are often the source of conflicts of representation or even world wars.\nThe theoretical part of the project aims to understand the difficulties of regionalization of abstract worlds. Different geometries lead to different delimitations of the boundaries of regions, while different languages lead to different semantic qualifications of the content of these regions. Representation conflicts are inevitable if methods are not used to align geometric and semantic concepts.\nApplied to the dynamics of the contemporary world over 20 to 50 years, the empirical part of the project aims to explore the trajectories of regionalization that are transforming the material and imaginary organization of the World. The project proposes to analyze the transformations that are affecting the functional regionalization of the world (trade flows), the imaginaries produced by the media (news flow), and the cognitive representation that actors use according to their social and spatial position (mental maps).\n\n\n\nCitationBibTeX citation:@online{grasland2024,\n  author = {Grasland, Claude},\n  title = {WorldRegio},\n  date = {2024-08-31},\n  url = {https://worldregio.github.io/posts/2024-08-31-worldregio/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nGrasland, Claude. 2024. “WorldRegio.” August 31, 2024. https://worldregio.github.io/posts/2024-08-31-worldregio/."
+  },
+  {
+    "objectID": "posts/2024-09-01-newsworld/index.html",
+    "href": "posts/2024-09-01-newsworld/index.html",
+    "title": "Should Africa be renamed?",
+    "section": "",
+    "text": "In a recent publication by The Conversation, 29/08/2024 it is proposed to rename Africa.\n\n“Should African people be called black – or is the categorising of people by skin colour a racist practice? How about Africa? Is the name of the continent a racial slur because it was chosen by European exploiters and based on the weather rather than the people – and should it be renamed? These are questions that African philosophy scholar Jonathan Okeke Chimakonam considers in a research paper Chimakonam and Egbai (2021)”\n\n\n\n\n\nReferences\n\nChimakonam, Jonathan O., and Uti O. Egbai. 2021. “Is ‘Africa’ a Racial Slur and Should the Continent Be Renamed?” African Identities 22 (2): 293–306. https://doi.org/10.1080/14725843.2021.2017262."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Should Africa be renamed?\n\n\n\n\n\n\n\nWorld News\n\n\nAfrica\n\n\n\n\nDissemination of a recent research paper by The Conversation\n\n\n\n\n\n\nSep 1, 2024\n\n\n\n\n\n\n  \n\n\n\n\nWorldRegio\n\n\n\n\n\n\n\nWorldRegio\n\n\nResearch\n\n\n\n\nSummary of a project submitted to ERC Adavanced Grant 2024\n\n\n\n\n\n\nAug 31, 2024\n\n\nClaude Grasland\n\n\n\n\n\n\nNo matching items"
   }
 ]

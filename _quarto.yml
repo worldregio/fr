@@ -7,8 +7,9 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: "Claude Grasland"
-      - about.qmd
+        text: "Project"
+      - href: author.qmd
+        text: "Author"
       - links.qmd
       - posts.qmd
     right: 
