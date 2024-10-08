@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -209,6 +228,11 @@ ul.task-list li input[type="checkbox"] {
 <li>une liste finie de relations entre unités politiques appelées <em>frontières</em></li>
 </ul>
 <p>Notez que <em>États</em> et <em>frontières</em> sont utilisés ici dans le sens abstrait de <em>noeuds</em> et <em>sommets</em>, ce qui signifie qu’ils ne correspondent pas nécessairement à l’idée que l’on se fait du sens commun.</p>
+<p>Cette question de la distance entre pays a fait historiquement l’objet de nombreuses recherches, notamment dans le cadre du projet <a href="https://correlatesofwar.org/">correlates of war (cow)</a>, un réseau de chercheur en sciences politiques et d’historien qui ont essayé de comprendre les causes des guerres et des conflits. Parmi de nombreuses solutions, les auteurs privilégient souvent la contiguïté c’est-à-dire la présence d’une frontière commune :</p>
+<blockquote class="blockquote">
+<p>“Whatever the reason for the findings connecting contiguity and conflict, geographic proximity is clearly important factor for empirical analyses of international relations. Several approaches are based on continuous measures of distance between countries. The distance between national capitals (Gleditsch and Singer 1975), or between centers of power (Bueno de Mesquita 1981 ), have been used to as measures of geographic proximity. Gleditsch and Ward (2001) have begun to construct a data set based on the concept of minimum distance, which is simply the distance between the two closest points for a pair of states. Nevertheless, direct contiguity is relatively straightforward and has therefore been, by far, the most common way of measuring proximity.”<span class="citation" data-cites="stinnett2002">(<a href="#ref-stinnett2002" role="doc-biblioref">Stinnett et al. 2002</a>)</span>.</p>
+</blockquote>
+<p>C’est la solution que nous allons adopter ici en essayant d’actualiser la base produite par ces auteurs au début des années 2000.</p>
 </section>
 <section id="a.-les-états-comme-noeuds" class="level2">
 <h2 class="anchored" data-anchor-id="a.-les-états-comme-noeuds">A. Les états comme noeuds ?</h2>
@@ -297,7 +321,7 @@ Attaching package: 'terra'</code></pre>
 <p>Nous utilisons la fonction <strong>getBorders()</strong> du package <em>cartography</em> élaboré par Nicolas Lambert et Timothee Giraud, ingénieurs à l’UMS RIATE. Nous testons dans un premier temps l’algorithme sur un échantillon limité de 30 pays situés sur les rives nord et sud de la Méditerranée afin de vérifier la qualité des résultats et le temps de calcul sur 30 pays.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.3747699 secs</code></pre>
+<pre><code>Time difference of 0.375906 secs</code></pre>
 </div>
 </div>
 <p>Les frontières terrestres ont été correctement extraites. L’Espagne n’est pas liée au Maroc car Ceuta et Melila ont été éliminés par le niveau de résolution spatiale.</p>
@@ -393,10 +417,15 @@ Attaching package: 'terra'</code></pre>
 </div>
 
 
+
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{grasland2024,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-stinnett2002" class="csl-entry" role="listitem">
+Stinnett, Douglas M., Jaroslav Tir, Paul F. Diehl, Philip Schafer, and Charles Gochman. 2002. <span>“The Correlates of War (Cow) Project Direct Contiguity Data, Version 3.0.”</span> <em>Conflict Management and Peace Science</em> 19 (2): 59–67. <a href="https://doi.org/10.1177/073889420201900203">https://doi.org/10.1177/073889420201900203</a>.
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{grasland2024,
   author = {Grasland, Claude},
   title = {Réseaux Géopolitiques},
   date = {2024-09-27},
