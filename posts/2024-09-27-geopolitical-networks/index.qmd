@@ -1,0 +1,473 @@
+---
+title: "Réseaux géopolitiques"
+description: "Elaboration d'un graphe des pays ou territoires voisins"
+author:
+  - name: Claude Grasland
+    url: https://worldregio.github.io/
+    orcid: 0000-0003-1504-4965
+    affiliation: Professor of Geography, Université Paris, UMR 8504 Géographie-cités
+    affiliation-url: https://geographie-cites.cnrs.fr/
+date: 09-27-2024
+categories: [WorldRegio, Research] # self-defined categories
+citation: 
+  url: https://worldregio.github.io/en/posts/2024-09-27-geopolitical-networks/ 
+image: img/network004a.png
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+
+![Geopolitical network](img/network004a.png){width=400}
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, widgetframe_widgetsdir = 'widgets')
+library(sf)
+library(dplyr)
+library(mapsf)
+library(cartography)
+library(visNetwork, quietly = TRUE)
+library(widgetframe)
+```
+
+
+
+
+## Introduction
+
+Une des options possibles du projet Worldregio est de proposer des méthodes de régionalisation basées sur la division d'un réseau d'Etats en sous-réseaux (composantes) selon un double critère :
+
+-   **proximité géométrique** : les composantes du sous-graphe doivent former des ensembles connexes.
+-   **proximité attributaire** : les composantes doivent maximiser un critère de similarité ou d'interaction indépendant de la proximité géométrique
+
+
+La définition d'un **réseau géopolitique** au niveau mondial implique la définition conjointe de deux listes d'objets :
+
+- une liste finie d'unités politiques appelées *États*
+- une liste finie de relations entre unités politiques appelées *frontières*
+
+Notez que *États* et *frontières* sont utilisés ici dans le sens abstrait de *noeuds* et *sommets*, ce qui signifie qu'ils ne correspondent pas nécessairement à l'idée que l'on se fait du sens commun.
+
+## A. Les états comme noeuds ?
+
+
+
+La définition d'une liste finie d'états sera nécessairement compliquée car de nombreux *territoires contestés* dans le monde ne sont pas reconnus par tous les pays du monde et sont donc difficiles à définir en termes de géométrie et sont absents des bases de données où les attributs utilisés pour la régionalisation sont disponibles.
+
+De nombreuses listes de pays - ou territoires à souveraineté partielle - sont disponibles dans les logiciels de cartographie open source (*gadm*, *natural earth*, ...) mais avec des listes de pays différentes et aussi des géométries différentes !
+
+
+
+- **Taïwan** : le territoire est relativement bien défini mais le pays n'est pas présent dans les bases de données officielles de l'ONU car la Chine le considère comme une province chinoise. Mais dans d'autres bases de données (par exemple sur le commerce), Taïwan existe.
+- **Chypre du Nord** : le territoire n'est reconnu comme un État que par la Turquie, l'UE le considérant comme une partie occupée de Chypre. Le territoire est relativement bien défini. L'UE le considère comme une partie occupée de Chypre.
+- **L'Abkhazie, l'Ossétie du Sud, la Transnitrie, ...** sont des Etats de facto reconnus par la Russie.
+- **Kosovo** : non reconnu par tous les Etats membres de l'UE- ...
+
+
+### Quelle géométrie des états ?
+
+En admettant que nous ayons réussi à définir une liste finie d'Etats, un autre problème va se poser concernant la géométrie des Etats qui n'est généralement pas limitée à un seul polygone mais peut généralement être définie comme un multipolygone qui peut inclure des morceaux de territoire très éloignés. Selon la liste des morceaux de territoire que l'on considère, le réseau de frontières sera différent et les résultats de la procédure de régionalisation peuvent être fortement modifiés.
+
+
+
+```{r, echo=FALSE, eval=TRUE}
+library(geodata)
+map<-world(resolution=5, path=tempdir())
+m<-st_as_sf(map)
+names(m)<-c("ISO3","country","geometry")
+```
+
+
+
+#### Le cas de l'Allemagne
+
+L'Allemagne est un cas simple d'État constitué d'un seul polygone (si l'on exclut certaines îles) et où l'on peut facilement proposer une liste d'autres États partageant une frontière terrestre commune : Danemark, Pays-Bas, Belgique, Luxembourg, France, Suisse, Autriche, République tchèque et Pologne. On peut bien sûr arguer que la liste des voisins a changé au cours de l'histoire du pays, mais si l'on considère la situation actuelle, il est relativement facile de dresser une liste.
+
+
+
+```{r, out.width="500px"}
+stalist <- "DEU"
+xref<-13
+yref<-52
+mycrs<-paste("+proj=laea +x_0=0 +y_0=0 +lon_0=",xref," +lat_0=",yref,sep="")
+map<-st_transform(m,mycrs)
+sel<-map %>% filter(ISO3 %in% stalist)
+mf_theme("agolalight")
+mf_map(sel, type="base")
+mf_map(map, type="base", col="gray80",add=T)
+mf_map(sel, type="base", col="lightyellow", border="red", add=T)
+mf_label(sel,var = "ISO3", halo = T,cex=0.6, col="red")
+
+```
+
+#### Le cas du Danemark
+
+Le cas du Danemark est un peu plus difficile, car nous devons décider si le Groenland et les îles Féroé doivent être inclus ou non dans le territoire de l'État danois. Il s'agit dans les deux cas de territoires autonomes plus ou moins éloignés de la zone métropolitaine, avec moins de population mais beaucoup plus de superficie dans le cas du Groenland. Si l'on considère uniquement les frontières terrestres, le Danemark n'a qu'un seul voisin (l'Allemagne) et les territoires éloignés ne modifient pas la topologie. Mais la situation sera différente si l'on considère les frontières maritimes avec des pays comme l'Islande, le Canada, etc. 
+
+
+```{r, out.width = "500px",fig.cap="What is exactly the teritory of Denmark ?",fig.align='left'}
+stalist<-c("DNK","GRL", "FRO")
+xref<--10
+yref<-62
+mycrs<-paste("+proj=laea +x_0=0 +y_0=0 +lon_0=",xref," +lat_0=",yref,sep="")
+map<-st_transform(m,mycrs)
+sel<-map %>% filter(ISO3 %in% stalist)
+mf_theme("agolalight")
+mf_map(sel, type="base")
+mf_map(map, type="base", col="gray80",add=T)
+mf_map(sel, type="base", col="lightyellow", border="red", add=T)
+mf_label(sel,var = "ISO3", halo = T,cex=0.6, col="red")
+
+```
+
+Enfin, nous devrions également considérer le cas de la Suède qui est séparée du Danemark par la mer mais qui est directement reliée au Danemark par le célèbre pont d'öresund ... Mais comme le pont est atteint par un tunnel, doit-on considérer que les deux pays sont toujours séparés par la mer ?
+
+```{r, out.width = "400px",fig.cap="Can we consider that Denmark and Sweden are separated by the sea ?",fig.align='left'}
+knitr::include_graphics("img/oresund.jpg")
+
+
+```
+
+
+#### Le cas de la France
+
+Comme dernier exemple de complexité maximale, nous pouvons considérer le cas de la France où nous avons un grand nombre de territoires rempotés avec une grande diversité de statuts politiques. Certains d'entre eux sont des *départements et territoires d'outre mer (DROM)* alors que d'autres ne sont que des *territoires d'outre mer* avec différents niveaux d'autonomie. Faut-il les inclure ou non dans la liste des territoires utilisés pour la construction de notre réseau ?
+
+
+```{r}
+stalist<-c("FRA","GUF","GLP","MTQ","REU","PYF","NCL","SPM","ATF")
+xref<-2
+yref<-49
+mycrs<-paste("+proj=laea +x_0=0 +y_0=0 +lon_0=",xref," +lat_0=",yref,sep="")
+map<-st_transform(m,mycrs)
+sel<-map %>% filter(ISO3 %in% stalist)
+mf_theme("agolalight")
+mf_map(sel, type="base")
+mf_map(map, type="base", col="gray80",add=T)
+mf_map(sel, type="base", col="lightyellow", border="red", add=T)
+mf_label(sel,var = "ISO3", halo = T,cex=0.6, col="red")
+```
+
+Contrairement au Danemark, ces territoires éloignés ne sont pas seulement des îles et, dans le cas du territoire de la Guyane française, nous avons une longue frontière terrestre avec le Brésil et la Guyane, qui est également une frontière de l'UE.
+
+## B. Le graphe des pays méditerranéens
+
+
+Nous utilisons ici la carte du monde proposée par le GADM à un faible niveau de résolution et adoptons une projection de Robinson afin d'avoir des distances approximativement en km. 
+
+```{r}
+# wld<-st_transform(wld,"+proj=robin +lon_0=11.79+x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+
+# Winkel Tripel projection 
+wld <- st_transform(m,"ESRI:54018")
+
+mf_theme("agolalight")
+mf_map(wld, type="base", col="lightyellow")
+mf_layout(title = "The GADM map of the world (Robinson Projection)",
+          credits = "Grasland C., GlobReg project")
+```
+
+
+Nous utilisons la fonction **getBorders()** du package *cartography* élaboré par Nicolas Lambert et Timothee Giraud, ingénieurs à l'UMS RIATE. Nous testons dans un premier temps l'algorithme sur un échantillon limité de 30 pays situés sur les rives nord et sud de la Méditerranée afin de vérifier la qualité des résultats et le temps de calcul sur 30 pays.
+
+```{r}
+# Choose Sample
+mysel<- c("ITA","TUN","MLT","DZA","CHE","SVN","HRV","AUT","MNE","ALB","GRC", "LBY","BIH", "AND", "TUR","CYP","LBN","PSE","ISR","EGY","SYR","MAR","FRA","ESP", "PRT","BGR","ROU","JOR", "XKO","SRB","MKD", "HUN")
+
+samp <- wld[wld$ISO3 %in% mysel,]
+
+# Extract Borders
+t1<-Sys.time()
+samp.bord.land<-getBorders(x=samp)
+samp.bord.land$type<-"land"
+t2<-Sys.time()
+t2-t1
+
+
+
+```
+
+
+Les frontières terrestres ont été correctement extraites. L'Espagne n'est pas liée au Maroc car Ceuta et Melila ont été éliminés par le niveau de résolution spatiale.
+
+```{r}
+# Plot Result
+mf_theme("agolalight")
+mf_map(samp, type="base", col="gray80")
+mf_map(samp.bord.land, 
+       type="typo", 
+       var = "id",
+       col = sample(x = rainbow(nrow(samp.bord.land))), 
+       lwd = 1, 
+       leg_pos = NA,
+       add = TRUE)
+mf_label(samp,var = "ISO3", 
+         halo = T,
+         cex=0.3, 
+         col="black",
+         overlap = F)
+mf_layout(title = "Extraction of land borders",
+          credits = "Grasland C., GlobReg project")
+```
+
+
+### Frontères terrestres
+
+```{r, echo = F, eval=FALSE}
+nodes<- samp %>% st_drop_geometry() %>%
+         select(id = ISO3,label = country)
+edges <- samp.bord.land %>% st_drop_geometry() %>%
+         filter(id1 > id2) %>%
+        select(from = id1, to = id2, 
+               code = id,group = type)
+g<-visNetwork(nodes, edges)
+g
+```
+
+<div class="centered">
+<img src="img/network000.png" width=700px />
+</div>
+
+### Frontières maritimes
+
+L'algorithme élaboré par N. Lambert et Timothée Giraud (UMS RIATE) est relativement complexe et utilise deux paramètres :
+
+- **width** : la distance maximale à la terre (en mètres)
+- **res** : la grille de points utilisée pour l'analyse de la zone tampon (en mètres). 
+
+Si une unité n'a pas de terre dans la grille, elle ne sera pas utilisée pour l'analyse des frontières. C'est par exemple un problème dans le cas de Malte où le pays n'est pas pris en compte avec une résolution inférieure à 20km. Selon notre expérience, de bons résultats en un temps raisonnable peuvent être obtenus avec une distance maximale de 500 km et une grille de résolution de 20km.
+
+
+
+```{r, message=F, waarning = F}
+
+# Extract Borders
+t1<-Sys.time()
+samp.bord.sea<-getOuterBorders(x=samp, width=370000,res=20000)
+samp.bord.sea$type<-"sea"
+t2<-Sys.time()
+#t2-t1
+
+```
+
+
+Malte et Chypre ne sont plus isolées et sont reliées à leurs voisins par des frontières maritimes : 
+
+```{r}
+# Plot Result
+mf_theme("agolalight")
+mf_map(samp, type="base", col="gray80")
+mf_map(samp.bord.sea, 
+       type="typo", 
+       var = "id",
+       col = sample(x = rainbow(nrow(samp.bord.sea))), 
+       lwd = 1, 
+       leg_pos = NA,
+       add = TRUE)
+mf_label(samp,var = "ISO3", 
+         halo = T,
+         cex=0.3, 
+         col="black",
+         overlap = F)
+mf_layout(title = "Extraction of sea borders",
+          credits = "Grasland C., GlobReg project")
+```
+
+### frontières terrestres ou maritimes
+
+Un réseau géopolitique peut être élaboré en combinant les frontières terrestres et maritimes :
+
+```{r}
+
+# Ad type of borders
+
+
+# Merge
+samp.bord <- rbind(samp.bord.sea, samp.bord.land) %>% 
+              group_by(id) %>% summarise()
+
+# Type
+samp.bord$land<-samp.bord$id %in% (samp.bord.land$id)
+samp.bord$sea<-samp.bord$id %in% (samp.bord.sea$id)
+samp.bord$type<-as.factor(samp.bord$land*10+samp.bord$sea)
+levels(samp.bord$type)<-c("sea","land","hybrid")
+samp.bord$ISO3i<-substr(samp.bord$id,1,3)
+samp.bord$ISO3j<-substr(samp.bord$id,5,7)
+
+
+# map
+mf_theme("agolalight")
+mf_map(samp, type="base", col="gray80")
+mf_map(samp.bord, 
+       type="typo", 
+       var = "type",
+       pal = c("blue","brown","orange"), 
+       lwd = 1, 
+       leg_pos = "topright",
+       leg_title = "Type of borders",
+       add = TRUE)
+mf_label(samp,var = "ISO3", 
+         halo = T,
+         cex=0.3, 
+         col="black",
+         overlap = F)
+mf_layout(title = "Combination of land and sea borders",
+          credits = "Grasland C., GlobReg project")
+
+```
+
+
+```{r, echo = F, eval=F}
+nodes<- samp %>% st_drop_geometry() %>%
+         select(id = ISO3,label = country)
+edges <- samp.bord %>% st_drop_geometry() %>%
+         filter(ISO3i > ISO3j) %>%
+        select(from = ISO3i, to = ISO3j, 
+               code = id,group = type)
+g<-visNetwork(nodes, edges)
+g
+```
+
+<div class="centered">
+<img src="img/network001.png" width=700px />
+</div>
+
+
+### Distance minimale entre pays
+
+La distance entre deux Etats peut être mesurée de différentes manières. Nous pouvons utiliser ici le travail intéressant effectué par le CEPII pour l'analyse des flux commerciaux qui suggère comme solutions possibles :
+
+- La distance entre les centroïdes de la superficie de chaque Etat
+- La distance entre les capitales de chaque Etat 
+- La distance moyenne entre les principales villes de chaque Etat - - etc.
+
+#### Distance entre capitales < 500 km 
+
+```{r, echo=FALSE, eval=FALSE}
+dis<-read.table("geom/world/dist_cepii2015.csv",
+                header=T,
+                sep=";",
+                dec =".")
+dis <- dis %>% mutate(ISO3i = iso_o, ISO3j = iso_d, Dij = distcap) %>%
+               filter(ISO3i %in% mysel,
+                      ISO3j %in% mysel,
+                      Dij < 500)
+codes<-unique(c(dis$ISO3i,dis$ISO3j))
+nodes<-data.frame(id=codes, label=codes)
+
+edges <- dis %>%
+         filter(ISO3i > ISO3j) %>%
+        select(from = ISO3i, to = ISO3j)
+
+g<-visNetwork(nodes, edges)
+g
+
+
+```
+<div class="centered">
+<img src="img/network002.png" width=700px />
+</div>
+
+#### Distance entre capitales < 1000 km
+
+```{r, echo=FALSE, eval=FALSE}
+dis<-read.table("geom/world/dist_cepii2015.csv",
+                header=T,
+                sep=";",
+                dec =".")
+dis <- dis %>% mutate(ISO3i = iso_o, ISO3j = iso_d, Dij = distcap) %>%
+               filter(ISO3i %in% mysel,
+                      ISO3j %in% mysel,
+                      Dij < 1000)
+codes<-unique(c(dis$ISO3i,dis$ISO3j))
+nodes<-data.frame(id=codes, label=codes)
+
+edges <- dis %>%
+         filter(ISO3i > ISO3j) %>%
+        select(from = ISO3i, to = ISO3j)
+
+g<-visNetwork(nodes, edges)
+g
+```
+
+<div class="centered">
+<img src="img/network003.png" width=700px />
+</div>
+
+
+## C. Un réseau géopolitique mondial
+
+
+Nous proposons d'élaborer un réseau complet de pays du monde sur la base de la carte simplifiée du GADM qui contient 231 unités géopolitiques (certaines d'entre elles appartenant au même État). Nous utilisons les frontières terrestres et maritimes comme critères pour la définition des arêtes. Le temps de calcul a été de 11 minutes pour les frontières maritimes avec les paramètres width= 370 km & res 20 km.
+
+
+
+####  Carte des frontières mondiales
+
+```{r}
+wld<-readRDS("worldreg/wld.RDS")
+wld.bord<-readRDS("worldreg/wld.bord.RDS")
+
+
+
+# map
+mf_theme("agolalight")
+mf_map(wld, type="base", col="gray80")
+mf_map(wld.bord, 
+       type="typo", 
+       var = "type",
+       pal = c("blue","brown","orange"), 
+       lwd = 1, 
+       leg_pos = "topright",
+       leg_title = "Type of borders",
+       add = TRUE)
+
+mf_layout(title = "World borders map",
+          credits = "Grasland C., GlobReg project")
+```
+
+
+####  Graphe géopolitique mondial 
+
+```{r, echo = F, eval=F}
+nodes<- wld %>% st_drop_geometry() %>%
+         select(id = ISO3,label = ISO3, ISO3)
+size <- wld.bord %>% st_drop_geometry() %>%
+           group_by(ISO3i) %>% summarise(size=n()) %>% rename(id=ISO3i)
+nodes<-left_join(nodes,size)
+nodes$color<-"red"
+#nodes$shape<-"box"
+
+nodes$size[is.na(nodes$size)]<-0.1
+nodes$size<-sqrt(nodes$size)*10
+edges <- wld.bord %>% st_drop_geometry() %>%
+         filter(ISO3i > ISO3j) %>%
+        select(from = ISO3i, to = ISO3j, 
+               code = id,group = type)
+edges$color="gray70"
+edges$size=4
+
+g<-visNetwork(nodes, edges) %>%
+    visIgraphLayout(layout ="layout.fruchterman.reingold",smooth = T )
+
+
+g
+```
+
+<div class="centered">
+<img src="img/network004.png" width=700px />
+</div>
+
+
+
+La centralité des pays dans ce réseau géopolitique dépend du nombre de frontières qu'ils partagent avec d'autres pays (Cf. Chine, Iran, Russie, ...).
+
+<div class="centered">
+<img src="img/network004a.png" width=700px />
+</div>
+
+
+Mais certains pays ayant peu de liens peuvent jouer un rôle stratégique dans le réseau en termes d'interdépendance (cf. les États-Unis, le Canada, l'Islande qui relient l'Amérique à l'Europe et à l'Asie).
+
+<div class="centered">
+<img src="img/network004b.png" width=700px />
+</div>

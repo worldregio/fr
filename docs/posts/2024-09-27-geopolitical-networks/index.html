@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Claude Grasland">
+<meta name="dcterms.date" content="2024-09-27">
+<meta name="description" content="Elaboration d’un graphe des pays ou territoires voisins">
+
+<title>WorldRegio - Réseaux géopolitiques</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">WorldRegio</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">Projet</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../author.html" rel="" target="">
+ <span class="menu-text">Auteur</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/worldregio" rel="" target="_blank"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Réseaux géopolitiques</h1>
+                  <div>
+        <div class="description">
+          Elaboration d’un graphe des pays ou territoires voisins
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">WorldRegio</div>
+                <div class="quarto-category">Research</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://worldregio.github.io/">Claude Grasland</a> <a href="https://orcid.org/0000-0003-1504-4965" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://geographie-cites.cnrs.fr/">
+              Professor of Geography, Université Paris, UMR 8504 Géographie-cités
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 27, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#a.-les-états-comme-noeuds" id="toc-a.-les-états-comme-noeuds" class="nav-link" data-scroll-target="#a.-les-états-comme-noeuds">A. Les états comme noeuds ?</a>
+  <ul class="collapse">
+  <li><a href="#quelle-géométrie-des-états" id="toc-quelle-géométrie-des-états" class="nav-link" data-scroll-target="#quelle-géométrie-des-états">Quelle géométrie des états ?</a></li>
+  </ul></li>
+  <li><a href="#b.-le-graphe-des-pays-méditerranéens" id="toc-b.-le-graphe-des-pays-méditerranéens" class="nav-link" data-scroll-target="#b.-le-graphe-des-pays-méditerranéens">B. Le graphe des pays méditerranéens</a>
+  <ul class="collapse">
+  <li><a href="#frontères-terrestres" id="toc-frontères-terrestres" class="nav-link" data-scroll-target="#frontères-terrestres">Frontères terrestres</a></li>
+  <li><a href="#frontières-maritimes" id="toc-frontières-maritimes" class="nav-link" data-scroll-target="#frontières-maritimes">Frontières maritimes</a></li>
+  <li><a href="#frontières-terrestres-ou-maritimes" id="toc-frontières-terrestres-ou-maritimes" class="nav-link" data-scroll-target="#frontières-terrestres-ou-maritimes">frontières terrestres ou maritimes</a></li>
+  <li><a href="#distance-minimale-entre-pays" id="toc-distance-minimale-entre-pays" class="nav-link" data-scroll-target="#distance-minimale-entre-pays">Distance minimale entre pays</a></li>
+  </ul></li>
+  <li><a href="#c.-un-réseau-géopolitique-mondial" id="toc-c.-un-réseau-géopolitique-mondial" class="nav-link" data-scroll-target="#c.-un-réseau-géopolitique-mondial">C. Un réseau géopolitique mondial</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/network004a.png" class="img-fluid figure-img" width="400"></p>
+<figcaption class="figure-caption">Geopolitical network</figcaption>
+</figure>
+</div>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Une des options possibles du projet Worldregio est de proposer des méthodes de régionalisation basées sur la division d’un réseau d’Etats en sous-réseaux (composantes) selon un double critère :</p>
+<ul>
+<li><strong>proximité géométrique</strong> : les composantes du sous-graphe doivent former des ensembles connexes.</li>
+<li><strong>proximité attributaire</strong> : les composantes doivent maximiser un critère de similarité ou d’interaction indépendant de la proximité géométrique</li>
+</ul>
+<p>La définition d’un <strong>réseau géopolitique</strong> au niveau mondial implique la définition conjointe de deux listes d’objets :</p>
+<ul>
+<li>une liste finie d’unités politiques appelées <em>États</em></li>
+<li>une liste finie de relations entre unités politiques appelées <em>frontières</em></li>
+</ul>
+<p>Notez que <em>États</em> et <em>frontières</em> sont utilisés ici dans le sens abstrait de <em>noeuds</em> et <em>sommets</em>, ce qui signifie qu’ils ne correspondent pas nécessairement à l’idée que l’on se fait du sens commun.</p>
+</section>
+<section id="a.-les-états-comme-noeuds" class="level2">
+<h2 class="anchored" data-anchor-id="a.-les-états-comme-noeuds">A. Les états comme noeuds ?</h2>
+<p>La définition d’une liste finie d’états sera nécessairement compliquée car de nombreux <em>territoires contestés</em> dans le monde ne sont pas reconnus par tous les pays du monde et sont donc difficiles à définir en termes de géométrie et sont absents des bases de données où les attributs utilisés pour la régionalisation sont disponibles.</p>
+<p>De nombreuses listes de pays - ou territoires à souveraineté partielle - sont disponibles dans les logiciels de cartographie open source (<em>gadm</em>, <em>natural earth</em>, …) mais avec des listes de pays différentes et aussi des géométries différentes !</p>
+<ul>
+<li><strong>Taïwan</strong> : le territoire est relativement bien défini mais le pays n’est pas présent dans les bases de données officielles de l’ONU car la Chine le considère comme une province chinoise. Mais dans d’autres bases de données (par exemple sur le commerce), Taïwan existe.</li>
+<li><strong>Chypre du Nord</strong> : le territoire n’est reconnu comme un État que par la Turquie, l’UE le considérant comme une partie occupée de Chypre. Le territoire est relativement bien défini. L’UE le considère comme une partie occupée de Chypre.</li>
+<li><strong>L’Abkhazie, l’Ossétie du Sud, la Transnitrie, …</strong> sont des Etats de facto reconnus par la Russie.</li>
+<li><strong>Kosovo</strong> : non reconnu par tous les Etats membres de l’UE- …</li>
+</ul>
+<section id="quelle-géométrie-des-états" class="level3">
+<h3 class="anchored" data-anchor-id="quelle-géométrie-des-états">Quelle géométrie des états ?</h3>
+<p>En admettant que nous ayons réussi à définir une liste finie d’Etats, un autre problème va se poser concernant la géométrie des Etats qui n’est généralement pas limitée à un seul polygone mais peut généralement être définie comme un multipolygone qui peut inclure des morceaux de territoire très éloignés. Selon la liste des morceaux de territoire que l’on considère, le réseau de frontières sera différent et les résultats de la procédure de régionalisation peuvent être fortement modifiés.</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: terra</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>terra 1.7.46</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'terra'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:cartography':
+
+    north</code></pre>
+</div>
+</div>
+<section id="le-cas-de-lallemagne" class="level4">
+<h4 class="anchored" data-anchor-id="le-cas-de-lallemagne">Le cas de l’Allemagne</h4>
+<p>L’Allemagne est un cas simple d’État constitué d’un seul polygone (si l’on exclut certaines îles) et où l’on peut facilement proposer une liste d’autres États partageant une frontière terrestre commune : Danemark, Pays-Bas, Belgique, Luxembourg, France, Suisse, Autriche, République tchèque et Pologne. On peut bien sûr arguer que la liste des voisins a changé au cours de l’histoire du pays, mais si l’on considère la situation actuelle, il est relativement facile de dresser une liste.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="500"></p>
+</div>
+</div>
+</section>
+<section id="le-cas-du-danemark" class="level4">
+<h4 class="anchored" data-anchor-id="le-cas-du-danemark">Le cas du Danemark</h4>
+<p>Le cas du Danemark est un peu plus difficile, car nous devons décider si le Groenland et les îles Féroé doivent être inclus ou non dans le territoire de l’État danois. Il s’agit dans les deux cas de territoires autonomes plus ou moins éloignés de la zone métropolitaine, avec moins de population mais beaucoup plus de superficie dans le cas du Groenland. Si l’on considère uniquement les frontières terrestres, le Danemark n’a qu’un seul voisin (l’Allemagne) et les territoires éloignés ne modifient pas la topologie. Mais la situation sera différente si l’on considère les frontières maritimes avec des pays comme l’Islande, le Canada, etc.</p>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="500"></p>
+<figcaption class="figure-caption">What is exactly the teritory of Denmark ?</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Enfin, nous devrions également considérer le cas de la Suède qui est séparée du Danemark par la mer mais qui est directement reliée au Danemark par le célèbre pont d’öresund … Mais comme le pont est atteint par un tunnel, doit-on considérer que les deux pays sont toujours séparés par la mer ?</p>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/oresund.jpg" class="img-fluid figure-img" width="400"></p>
+<figcaption class="figure-caption">Can we consider that Denmark and Sweden are separated by the sea ?</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="le-cas-de-la-france" class="level4">
+<h4 class="anchored" data-anchor-id="le-cas-de-la-france">Le cas de la France</h4>
+<p>Comme dernier exemple de complexité maximale, nous pouvons considérer le cas de la France où nous avons un grand nombre de territoires rempotés avec une grande diversité de statuts politiques. Certains d’entre eux sont des <em>départements et territoires d’outre mer (DROM)</em> alors que d’autres ne sont que des <em>territoires d’outre mer</em> avec différents niveaux d’autonomie. Faut-il les inclure ou non dans la liste des territoires utilisés pour la construction de notre réseau ?</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Contrairement au Danemark, ces territoires éloignés ne sont pas seulement des îles et, dans le cas du territoire de la Guyane française, nous avons une longue frontière terrestre avec le Brésil et la Guyane, qui est également une frontière de l’UE.</p>
+</section>
+</section>
+</section>
+<section id="b.-le-graphe-des-pays-méditerranéens" class="level2">
+<h2 class="anchored" data-anchor-id="b.-le-graphe-des-pays-méditerranéens">B. Le graphe des pays méditerranéens</h2>
+<p>Nous utilisons ici la carte du monde proposée par le GADM à un faible niveau de résolution et adoptons une projection de Robinson afin d’avoir des distances approximativement en km.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Nous utilisons la fonction <strong>getBorders()</strong> du package <em>cartography</em> élaboré par Nicolas Lambert et Timothee Giraud, ingénieurs à l’UMS RIATE. Nous testons dans un premier temps l’algorithme sur un échantillon limité de 30 pays situés sur les rives nord et sud de la Méditerranée afin de vérifier la qualité des résultats et le temps de calcul sur 30 pays.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Time difference of 0.3747699 secs</code></pre>
+</div>
+</div>
+<p>Les frontières terrestres ont été correctement extraites. L’Espagne n’est pas liée au Maroc car Ceuta et Melila ont été éliminés par le niveau de résolution spatiale.</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>The following argument is not relevant when using type = 'typo': col.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<section id="frontères-terrestres" class="level3">
+<h3 class="anchored" data-anchor-id="frontères-terrestres">Frontères terrestres</h3>
+<div class="centered">
+<p><img src="img/network000.png" width="700px"></p>
+</div>
+</section>
+<section id="frontières-maritimes" class="level3">
+<h3 class="anchored" data-anchor-id="frontières-maritimes">Frontières maritimes</h3>
+<p>L’algorithme élaboré par N. Lambert et Timothée Giraud (UMS RIATE) est relativement complexe et utilise deux paramètres :</p>
+<ul>
+<li><strong>width</strong> : la distance maximale à la terre (en mètres)</li>
+<li><strong>res</strong> : la grille de points utilisée pour l’analyse de la zone tampon (en mètres).</li>
+</ul>
+<p>Si une unité n’a pas de terre dans la grille, elle ne sera pas utilisée pour l’analyse des frontières. C’est par exemple un problème dans le cas de Malte où le pays n’est pas pris en compte avec une résolution inférieure à 20km. Selon notre expérience, de bons résultats en un temps raisonnable peuvent être obtenus avec une distance maximale de 500 km et une grille de résolution de 20km.</p>
+<p>Malte et Chypre ne sont plus isolées et sont reliées à leurs voisins par des frontières maritimes :</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>The following argument is not relevant when using type = 'typo': col.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="frontières-terrestres-ou-maritimes" class="level3">
+<h3 class="anchored" data-anchor-id="frontières-terrestres-ou-maritimes">frontières terrestres ou maritimes</h3>
+<p>Un réseau géopolitique peut être élaboré en combinant les frontières terrestres et maritimes :</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="centered">
+<p><img src="img/network001.png" width="700px"></p>
+</div>
+</section>
+<section id="distance-minimale-entre-pays" class="level3">
+<h3 class="anchored" data-anchor-id="distance-minimale-entre-pays">Distance minimale entre pays</h3>
+<p>La distance entre deux Etats peut être mesurée de différentes manières. Nous pouvons utiliser ici le travail intéressant effectué par le CEPII pour l’analyse des flux commerciaux qui suggère comme solutions possibles :</p>
+<ul>
+<li>La distance entre les centroïdes de la superficie de chaque Etat</li>
+<li>La distance entre les capitales de chaque Etat</li>
+<li>La distance moyenne entre les principales villes de chaque Etat - - etc.</li>
+</ul>
+<section id="distance-entre-capitales-500-km" class="level4">
+<h4 class="anchored" data-anchor-id="distance-entre-capitales-500-km">Distance entre capitales &lt; 500 km</h4>
+<div class="centered">
+<p><img src="img/network002.png" width="700px"></p>
+</div>
+</section>
+<section id="distance-entre-capitales-1000-km" class="level4">
+<h4 class="anchored" data-anchor-id="distance-entre-capitales-1000-km">Distance entre capitales &lt; 1000 km</h4>
+<div class="centered">
+<p><img src="img/network003.png" width="700px"></p>
+</div>
+</section>
+</section>
+</section>
+<section id="c.-un-réseau-géopolitique-mondial" class="level2">
+<h2 class="anchored" data-anchor-id="c.-un-réseau-géopolitique-mondial">C. Un réseau géopolitique mondial</h2>
+<p>Nous proposons d’élaborer un réseau complet de pays du monde sur la base de la carte simplifiée du GADM qui contient 231 unités géopolitiques (certaines d’entre elles appartenant au même État). Nous utilisons les frontières terrestres et maritimes comme critères pour la définition des arêtes. Le temps de calcul a été de 11 minutes pour les frontières maritimes avec les paramètres width= 370 km &amp; res 20 km.</p>
+<section id="carte-des-frontières-mondiales" class="level4">
+<h4 class="anchored" data-anchor-id="carte-des-frontières-mondiales">Carte des frontières mondiales</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="graphe-géopolitique-mondial" class="level4">
+<h4 class="anchored" data-anchor-id="graphe-géopolitique-mondial">Graphe géopolitique mondial</h4>
+<div class="centered">
+<p><img src="img/network004.png" width="700px"></p>
+</div>
+<p>La centralité des pays dans ce réseau géopolitique dépend du nombre de frontières qu’ils partagent avec d’autres pays (Cf. Chine, Iran, Russie, …).</p>
+<div class="centered">
+<p><img src="img/network004a.png" width="700px"></p>
+</div>
+<p>Mais certains pays ayant peu de liens peuvent jouer un rôle stratégique dans le réseau en termes d’interdépendance (cf.&nbsp;les États-Unis, le Canada, l’Islande qui relient l’Amérique à l’Europe et à l’Asie).</p>
+<div class="centered">
+<p><img src="img/network004b.png" width="700px"></p>
+</div>
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{grasland2024,
+  author = {Grasland, Claude},
+  title = {Réseaux Géopolitiques},
+  date = {2024-09-27},
+  url = {https://worldregio.github.io/en/posts/2024-09-27-geopolitical-networks/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-grasland2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Grasland, Claude. 2024. <span>“Réseaux Géopolitiques.”</span> September
+27, 2024. <a href="https://worldregio.github.io/en/posts/2024-09-27-geopolitical-networks/">https://worldregio.github.io/en/posts/2024-09-27-geopolitical-networks/</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2024, Claude Grasland</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
